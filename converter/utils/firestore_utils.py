@@ -9,4 +9,5 @@ def connect_firestore():
         firebase_admin.initialize_app(cred)
     return firestore.client()
 
+# zapis
 
