@@ -1,6 +1,5 @@
 import os
 import mysql.connector
-from namex import export
 from pandas.io.sql import table_exists
 import json
 from datetime import datetime
