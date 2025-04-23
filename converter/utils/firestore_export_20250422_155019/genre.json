@@ -15,19 +15,19 @@
     },
     {
       "GenreId": 4,
-      "Name": "Alternative & Punk"
+      "Name": "Alternative"
     },
     {
       "GenreId": 5,
-      "Name": "Rock And Roll"
+      "Name": "Pop"
     },
     {
       "GenreId": 6,
-      "Name": "Blues"
+      "Name": "Classical"
     },
     {
       "GenreId": 7,
-      "Name": "Latin"
+      "Name": "Blues"
     },
     {
       "GenreId": 8,
@@ -35,71 +35,11 @@
     },
     {
       "GenreId": 9,
-      "Name": "Pop"
+      "Name": "Electronic"
     },
     {
       "GenreId": 10,
-      "Name": "Soundtrack"
-    },
-    {
-      "GenreId": 11,
-      "Name": "Bossa Nova"
-    },
-    {
-      "GenreId": 12,
-      "Name": "Easy Listening"
-    },
-    {
-      "GenreId": 13,
-      "Name": "Heavy Metal"
-    },
-    {
-      "GenreId": 14,
-      "Name": "R&B/Soul"
-    },
-    {
-      "GenreId": 15,
-      "Name": "Electronica/Dance"
-    },
-    {
-      "GenreId": 16,
-      "Name": "World"
-    },
-    {
-      "GenreId": 17,
-      "Name": "Hip Hop/Rap"
-    },
-    {
-      "GenreId": 18,
-      "Name": "Science Fiction"
-    },
-    {
-      "GenreId": 19,
-      "Name": "TV Shows"
-    },
-    {
-      "GenreId": 20,
-      "Name": "Sci Fi & Fantasy"
-    },
-    {
-      "GenreId": 21,
-      "Name": "Drama"
-    },
-    {
-      "GenreId": 22,
-      "Name": "Comedy"
-    },
-    {
-      "GenreId": 23,
-      "Name": "Alternative"
-    },
-    {
-      "GenreId": 24,
-      "Name": "Classical"
-    },
-    {
-      "GenreId": 25,
-      "Name": "Opera"
+      "Name": "Country"
     }
   ]
 }

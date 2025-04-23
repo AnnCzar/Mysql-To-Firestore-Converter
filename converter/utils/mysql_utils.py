@@ -194,6 +194,8 @@ def export_to_firestore_format():
     """
 
     export_dir = f"firestore_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    export_dir = "firestore_export_20250422_155019"
+
     os.makedirs(export_dir, exist_ok=True)
 
     tables_data = get_records_for_all_tables() # tabele

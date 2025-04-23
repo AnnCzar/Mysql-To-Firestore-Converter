@@ -3,75 +3,43 @@
   "documents": [
     {
       "PlaylistId": 1,
-      "Name": "Music"
+      "Name": "Playlist 1"
     },
     {
       "PlaylistId": 2,
-      "Name": "Movies"
+      "Name": "Playlist 2"
     },
     {
       "PlaylistId": 3,
-      "Name": "TV Shows"
+      "Name": "Playlist 3"
     },
     {
       "PlaylistId": 4,
-      "Name": "Audiobooks"
+      "Name": "Playlist 4"
     },
     {
       "PlaylistId": 5,
-      "Name": "90\u2019s Music"
+      "Name": "Playlist 5"
     },
     {
       "PlaylistId": 6,
-      "Name": "Audiobooks"
+      "Name": "Playlist 6"
     },
     {
       "PlaylistId": 7,
-      "Name": "Movies"
+      "Name": "Playlist 7"
     },
     {
       "PlaylistId": 8,
-      "Name": "Music"
+      "Name": "Playlist 8"
     },
     {
       "PlaylistId": 9,
-      "Name": "Music Videos"
+      "Name": "Playlist 9"
     },
     {
       "PlaylistId": 10,
-      "Name": "TV Shows"
-    },
-    {
-      "PlaylistId": 11,
-      "Name": "Brazilian Music"
-    },
-    {
-      "PlaylistId": 12,
-      "Name": "Classical"
-    },
-    {
-      "PlaylistId": 13,
-      "Name": "Classical 101 - Deep Cuts"
-    },
-    {
-      "PlaylistId": 14,
-      "Name": "Classical 101 - Next Steps"
-    },
-    {
-      "PlaylistId": 15,
-      "Name": "Classical 101 - The Basics"
-    },
-    {
-      "PlaylistId": 16,
-      "Name": "Grunge"
-    },
-    {
-      "PlaylistId": 17,
-      "Name": "Heavy Metal Classic"
-    },
-    {
-      "PlaylistId": 18,
-      "Name": "On-The-Go 1"
+      "Name": "Playlist 10"
     }
   ]
 }
