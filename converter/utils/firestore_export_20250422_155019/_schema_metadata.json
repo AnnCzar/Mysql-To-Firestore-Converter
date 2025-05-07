@@ -11,7 +11,8 @@
     "mediatype",
     "playlist",
     "playlisttrack",
-    "track"
+    "track",
+    "proba"
   ],
   "foreign_keys": [
     {
@@ -465,6 +466,168 @@
       "COLUMN_NAME": "UnitPrice",
       "DATA_TYPE": "decimal",
       "CHARACTER_MAXIMUM_LENGTH": null
+    },
+        {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "IntColumn",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "TinyIntColumn",
+      "DATA_TYPE": "tinyint",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "SmallIntColumn",
+      "DATA_TYPE": "smallint",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "MediumIntColumn",
+      "DATA_TYPE": "mediumint",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BigIntColumn",
+      "DATA_TYPE": "bigint",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "FloatColumn",
+      "DATA_TYPE": "float",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DoubleColumn",
+      "DATA_TYPE": "double",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DecimalColumn",
+      "DATA_TYPE": "decimal",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DecimalColumn2",
+      "DATA_TYPE": "decimal",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "CharColumn",
+      "DATA_TYPE": "char",
+      "CHARACTER_MAXIMUM_LENGTH": 1
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "VarCharColumn",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 255
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "VarCharColumnLong",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 255
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "TextColumn",
+      "DATA_TYPE": "text",
+      "CHARACTER_MAXIMUM_LENGTH": 65535
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "TextColumnLong",
+      "DATA_TYPE": "text",
+      "CHARACTER_MAXIMUM_LENGTH": 65535
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateTimeColumn",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateTimeColumn2",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateTimeColumn3",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateTimeColumn4",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateColumn",
+      "DATA_TYPE": "date",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "TimeColumn",
+      "DATA_TYPE": "time",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BooleanColumnTrue",
+      "DATA_TYPE": "boolean",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BooleanColumnFalse",
+      "DATA_TYPE": "boolean",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BooleanColumnInt",
+      "DATA_TYPE": "boolean",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BooleanColumnStr",
+      "DATA_TYPE": "boolean",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BlobColumn",
+      "DATA_TYPE": "blob",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "JsonColumn",
+      "DATA_TYPE": "json",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "EnumColumn",
+      "DATA_TYPE": "enum",
+      "CHARACTER_MAXIMUM_LENGTH": null
     }
   ],
   "indexes": [
@@ -605,6 +768,12 @@
       "INDEX_NAME": "IFK_TrackMediaTypeId",
       "COLUMN_NAME": "MediaTypeId",
       "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "IntColumn",
+      "INDEX_TYPE": "PRIMARY",
+      "NON_UNIQUE": 0
     }
   ]
 }
