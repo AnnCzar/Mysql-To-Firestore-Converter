@@ -1,3 +1,4 @@
+import base64
 import json
 from datetime import datetime
 from converter.utils.firestore_utils import connect_firestore
@@ -71,7 +72,16 @@ def data_mapping(value, data_type, max_length):
         if data_type in {'char', 'varchar', 'text'}:
             max_len = min(max_length, 1048487) if max_length else 1048487
             return str(value)[:max_len]
-
+        if data_type in {'blob', 'binary', 'varbinary', 'longblob', 'mediumblob', 'tinyblob'}:
+            if isinstance(value, (bytes, bytearray)):
+                # Zakoduj dane binarne do base64 string
+                return base64.b64encode(value).decode('utf-8')
+            elif isinstance(value, str):
+                # Jeśli już jest stringiem, załóżmy że to poprawny base64
+                return value
+            else:
+                # Dla innych typów spróbuj przekonwertować na bytes
+                return base64.b64encode(bytes(str(value), 'utf-8')).decode('utf-8')
     except Exception as e:
         print(f'Błąd konwersji "{value}" ({data_type}): {str(e)}')
         return value

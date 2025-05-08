@@ -1,3 +1,4 @@
+import base64
 import json
 from converter.utils.firestore_utils import connect_firestore
 from decimal import Decimal
@@ -48,19 +49,40 @@ def data_mapping(value, data_type, max_length):
         if data_type == 'datetime':
             if value in {'CURRENT_TIMESTAMP', 'NOW()'}:
                 return firestore.SERVER_TIMESTAMP
+
+            if isinstance(value, datetime):
+                # Zwróć dokładnie tę samą datę i godzinę bez konwersji strefy czasowej
+                return value.replace(tzinfo=None)
+
+            value_str = str(value)
+
             formats = [
                 '%Y-%m-%dT%H:%M:%S',
-                '%Y-%m-%d %H:%M:%S.%f',
+                # '%Y-%m-%d %H:%M:%S.%f', # nie ma takiej mozliwosci
                 '%Y-%m-%d %H:%M:%S',
                 '%Y%m%d%H%M%S'
             ]
+            formats_with_fractional_sec = [
+                '%Y-%m-%dT%H:%M:%S.%f',
+                '%Y-%m-%d %H:%M:%S.%f',
+                '%Y%m%d%H%M%S.%f'
+            ]
+
 
             for fmt in formats:
                 try:
-                    return datetime.strptime(value, fmt)
+                    return datetime.strptime(value_str, fmt)
                 except ValueError:
                     continue
-            raise ValueError(f"Nieznany format daty: {value}")
+
+            for fmt in formats_with_fractional_sec:
+                try:
+                    dt = datetime.strptime(value_str, fmt)
+                    return str(dt)  # Zwróć jako string # w fs nie ma obslugi setnych sekund dlatego str
+                except ValueError:
+                    continue
+
+            raise ValueError(f"Nieznany format daty: {value_str}")
 
         if data_type == 'date':
             time_obj =  datetime.strptime(value, '%Y-%m-%d')
@@ -68,8 +90,9 @@ def data_mapping(value, data_type, max_length):
 
         if data_type == 'time':
             return value #jak str bo to nizej daje przykladowa date
-            # return datetime.strptime(value, '%H:%M:%S').time()
 
+        if data_type == 'year':
+             return int(value)
         # logiczne
         if data_type in {'boolean', 'bool'}:
             if str(value).isdigit():
@@ -80,6 +103,17 @@ def data_mapping(value, data_type, max_length):
         if data_type in {'char', 'varchar', 'text'}:
             max_len = min(max_length, 1048487) if max_length else 1048487
             return str(value)[:max_len]
+
+        if data_type in {'blob', 'binary', 'varbinary', 'longblob', 'mediumblob', 'tinyblob'}:
+            if isinstance(value, (bytes, bytearray)):
+                # Zakoduj dane binarne do base64 string
+                return base64.b64encode(value).decode('utf-8')
+            elif isinstance(value, str):
+                # Jeśli już jest stringiem, załóżmy że to poprawny base64
+                return value
+            else:
+                # Dla innych typów spróbuj przekonwertować na bytes
+                return base64.b64encode(bytes(str(value), 'utf-8')).decode('utf-8')
 
     except Exception as e:
         print(f'Błąd konwersji "{value}" ({data_type}): {str(e)}')
