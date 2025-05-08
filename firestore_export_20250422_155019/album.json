@@ -1,0 +1,155 @@
+{
+  "collection_name": "album",
+  "documents": [
+    {
+      "AlbumId": 1,
+      "Title": "Album 1",
+      "ArtistId": 8
+    },
+    {
+      "AlbumId": 2,
+      "Title": "Album 2",
+      "ArtistId": 5
+    },
+    {
+      "AlbumId": 3,
+      "Title": "Album 3",
+      "ArtistId": 9
+    },
+    {
+      "AlbumId": 4,
+      "Title": "Album 4",
+      "ArtistId": 7
+    },
+    {
+      "AlbumId": 5,
+      "Title": "Album 5",
+      "ArtistId": 18
+    },
+    {
+      "AlbumId": 6,
+      "Title": "Album 6",
+      "ArtistId": 12
+    },
+    {
+      "AlbumId": 7,
+      "Title": "Album 7",
+      "ArtistId": 3
+    },
+    {
+      "AlbumId": 8,
+      "Title": "Album 8",
+      "ArtistId": 15
+    },
+    {
+      "AlbumId": 9,
+      "Title": "Album 9",
+      "ArtistId": 6
+    },
+    {
+      "AlbumId": 10,
+      "Title": "Album 10",
+      "ArtistId": 11
+    },
+    {
+      "AlbumId": 11,
+      "Title": "Album 11",
+      "ArtistId": 4
+    },
+    {
+      "AlbumId": 12,
+      "Title": "Album 12",
+      "ArtistId": 17
+    },
+    {
+      "AlbumId": 13,
+      "Title": "Album 13",
+      "ArtistId": 2
+    },
+    {
+      "AlbumId": 14,
+      "Title": "Album 14",
+      "ArtistId": 19
+    },
+    {
+      "AlbumId": 15,
+      "Title": "Album 15",
+      "ArtistId": 10
+    },
+    {
+      "AlbumId": 16,
+      "Title": "Album 16",
+      "ArtistId": 1
+    },
+    {
+      "AlbumId": 17,
+      "Title": "Album 17",
+      "ArtistId": 14
+    },
+    {
+      "AlbumId": 18,
+      "Title": "Album 18",
+      "ArtistId": 8
+    },
+    {
+      "AlbumId": 19,
+      "Title": "Album 19",
+      "ArtistId": 13
+    },
+    {
+      "AlbumId": 20,
+      "Title": "Album 20",
+      "ArtistId": 20
+    },
+    {
+      "AlbumId": 21,
+      "Title": "Album 21",
+      "ArtistId": 16
+    },
+    {
+      "AlbumId": 22,
+      "Title": "Album 22",
+      "ArtistId": 5
+    },
+    {
+      "AlbumId": 23,
+      "Title": "Album 23",
+      "ArtistId": 7
+    },
+    {
+      "AlbumId": 24,
+      "Title": "Album 24",
+      "ArtistId": 9
+    },
+    {
+      "AlbumId": 25,
+      "Title": "Album 25",
+      "ArtistId": 3
+    },
+    {
+      "AlbumId": 26,
+      "Title": "Album 26",
+      "ArtistId": 12
+    },
+    {
+      "AlbumId": 27,
+      "Title": "Album 27",
+      "ArtistId": 18
+    },
+    {
+      "AlbumId": 28,
+      "Title": "Album 28",
+      "ArtistId": 2
+    },
+    {
+      "AlbumId": 29,
+      "Title": "Album 29",
+      "ArtistId": 14
+    },
+    {
+      "AlbumId": 30,
+      "Title": "Album 30",
+      "ArtistId": 6
+    }
+  ]
+}

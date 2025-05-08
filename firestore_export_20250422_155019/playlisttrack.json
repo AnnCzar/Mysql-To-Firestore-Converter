@@ -1,0 +1,125 @@
+{
+  "collection_name": "playlisttrack",
+  "documents": [
+    {
+      "PlaylistId": 1,
+      "TrackId": 6
+    },
+    {
+      "PlaylistId": 1,
+      "TrackId": 14
+    },
+    {
+      "PlaylistId": 1,
+      "TrackId": 17
+    },
+    {
+      "PlaylistId": 2,
+      "TrackId": 12
+    },
+    {
+      "PlaylistId": 2,
+      "TrackId": 20
+    },
+    {
+      "PlaylistId": 2,
+      "TrackId": 30
+    },
+    {
+      "PlaylistId": 3,
+      "TrackId": 8
+    },
+    {
+      "PlaylistId": 3,
+      "TrackId": 9
+    },
+    {
+      "PlaylistId": 3,
+      "TrackId": 15
+    },
+    {
+      "PlaylistId": 4,
+      "TrackId": 10
+    },
+    {
+      "PlaylistId": 4,
+      "TrackId": 18
+    },
+    {
+      "PlaylistId": 4,
+      "TrackId": 23
+    },
+    {
+      "PlaylistId": 5,
+      "TrackId": 2
+    },
+    {
+      "PlaylistId": 5,
+      "TrackId": 7
+    },
+    {
+      "PlaylistId": 5,
+      "TrackId": 19
+    },
+    {
+      "PlaylistId": 6,
+      "TrackId": 4
+    },
+    {
+      "PlaylistId": 6,
+      "TrackId": 24
+    },
+    {
+      "PlaylistId": 6,
+      "TrackId": 27
+    },
+    {
+      "PlaylistId": 7,
+      "TrackId": 3
+    },
+    {
+      "PlaylistId": 7,
+      "TrackId": 16
+    },
+    {
+      "PlaylistId": 7,
+      "TrackId": 26
+    },
+    {
+      "PlaylistId": 8,
+      "TrackId": 11
+    },
+    {
+      "PlaylistId": 8,
+      "TrackId": 22
+    },
+    {
+      "PlaylistId": 9,
+      "TrackId": 1
+    },
+    {
+      "PlaylistId": 9,
+      "TrackId": 5
+    },
+    {
+      "PlaylistId": 9,
+      "TrackId": 13
+    },
+    {
+      "PlaylistId": 9,
+      "TrackId": 29
+    },
+    {
+      "PlaylistId": 10,
+      "TrackId": 21
+    },
+    {
+      "PlaylistId": 10,
+      "TrackId": 25
+    },
+    {
+      "PlaylistId": 10,
+      "TrackId": 28
+    }
+  ]
+}

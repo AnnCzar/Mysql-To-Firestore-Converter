@@ -1,0 +1,45 @@
+{
+  "collection_name": "playlist",
+  "documents": [
+    {
+      "PlaylistId": 1,
+      "Name": "Playlist 1"
+    },
+    {
+      "PlaylistId": 2,
+      "Name": "Playlist 2"
+    },
+    {
+      "PlaylistId": 3,
+      "Name": "Playlist 3"
+    },
+    {
+      "PlaylistId": 4,
+      "Name": "Playlist 4"
+    },
+    {
+      "PlaylistId": 5,
+      "Name": "Playlist 5"
+    },
+    {
+      "PlaylistId": 6,
+      "Name": "Playlist 6"
+    },
+    {
+      "PlaylistId": 7,
+      "Name": "Playlist 7"
+    },
+    {
+      "PlaylistId": 8,
+      "Name": "Playlist 8"
+    },
+    {
+      "PlaylistId": 9,
+      "Name": "Playlist 9"
+    },
+    {
+      "PlaylistId": 10,
+      "Name": "Playlist 10"
+    }
+  ]
+}

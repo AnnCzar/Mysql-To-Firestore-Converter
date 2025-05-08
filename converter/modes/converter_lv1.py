@@ -4,6 +4,7 @@ from converter.utils.firestore_utils import connect_firestore
 from decimal import Decimal
 from datetime import datetime
 from google.cloud import firestore
+from datetime import timezone
 
 def get_info():
     file = open('../utils/firestore_export_20250422_155019/_schema_metadata.json')
@@ -50,15 +51,10 @@ def data_mapping(value, data_type, max_length):
             if value in {'CURRENT_TIMESTAMP', 'NOW()'}:
                 return firestore.SERVER_TIMESTAMP
 
-            if isinstance(value, datetime):
-                # Zwróć dokładnie tę samą datę i godzinę bez konwersji strefy czasowej
-                return value.replace(tzinfo=None)
-
             value_str = str(value)
 
             formats = [
                 '%Y-%m-%dT%H:%M:%S',
-                # '%Y-%m-%d %H:%M:%S.%f', # nie ma takiej mozliwosci
                 '%Y-%m-%d %H:%M:%S',
                 '%Y%m%d%H%M%S'
             ]
@@ -71,7 +67,9 @@ def data_mapping(value, data_type, max_length):
 
             for fmt in formats:
                 try:
-                    return datetime.strptime(value_str, fmt)
+                    # return datetime.strptime(value_str, fmt)
+                    dt = datetime.strptime(value_str, fmt)
+                    return dt
                 except ValueError:
                     continue
 
@@ -85,8 +83,8 @@ def data_mapping(value, data_type, max_length):
             raise ValueError(f"Nieznany format daty: {value_str}")
 
         if data_type == 'date':
-            time_obj =  datetime.strptime(value, '%Y-%m-%d')
-            return datetime.combine(datetime.min, time_obj)
+            date_obj =  datetime.strptime(value, '%Y-%m-%d')
+            return datetime.combine(date_obj, datetime.min.time())
 
         if data_type == 'time':
             return value #jak str bo to nizej daje przykladowa date
@@ -103,23 +101,28 @@ def data_mapping(value, data_type, max_length):
         if data_type in {'char', 'varchar', 'text'}:
             max_len = min(max_length, 1048487) if max_length else 1048487
             return str(value)[:max_len]
-
+        if data_type == 'enum':
+            return str(value)
         if data_type in {'blob', 'binary', 'varbinary', 'longblob', 'mediumblob', 'tinyblob'}:
             if isinstance(value, (bytes, bytearray)):
                 # Zakoduj dane binarne do base64 string
                 return base64.b64encode(value).decode('utf-8')
             elif isinstance(value, str):
-                # Jeśli już jest stringiem, załóżmy że to poprawny base64
                 return value
             else:
-                # Dla innych typów spróbuj przekonwertować na bytes
                 return base64.b64encode(bytes(str(value), 'utf-8')).decode('utf-8')
-
+        if data_type == 'json':
+            if isinstance(value, (dict, list)):
+                return value
+            try:
+                return json.loads(value)
+            except (json.JSONDecodeError, TypeError) as e:
+                print(f'Błąd dekodowania JSON: {e}')
+                return str(value)
+        raise ValueError(f"Nieobsługiwany typ danych: {data_type}")
     except Exception as e:
         print(f'Błąd konwersji "{value}" ({data_type}): {str(e)}')
         return value
-
-
 
 
 def convert_tables():
@@ -128,14 +131,8 @@ def convert_tables():
     for table in tables:
         col_types = get_colums_types(table)
         pk = get_primary_key(table)
-        # file = open(f'../utils/firestore_export_20250422_155019/{table}.json')
-        # data = json.load(file)
         with open(f'../utils/firestore_export_20250422_155019/{table}.json') as f:
 
-        # for document in data['documents']:
-        #     primary_key_value = str(document[primary_key])
-        #     db.collection(table).document(primary_key_value).set(document)
-        # print("Tabela " + table + " converted." )
             batch = db.batch()
             collection_ref = db.collection(table)
             data = json.load(f)
@@ -149,10 +146,8 @@ def convert_tables():
                         spec['type'],
                         spec['max_length']
                     )
-
                 doc_ref = collection_ref.document(str(doc[pk]))
                 batch.set(doc_ref, converted)
-
                 if (idx + 1) % 500 == 0:
                     batch.commit()
                     batch = db.batch()
@@ -163,6 +158,5 @@ def convert_tables():
         print(f'Skonwertowano: {table} ({len(data["documents"])} dokumentów)')
         # collection = table
     print("Koniec Konwertowania")
-
 
 convert_tables()
