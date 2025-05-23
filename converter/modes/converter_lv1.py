@@ -69,7 +69,7 @@ def data_mapping(value, data_type, max_length):
                 try:
                     # return datetime.strptime(value_str, fmt)
                     dt = datetime.strptime(value_str, fmt)
-                    return dt
+                    return str(dt)
                 except ValueError:
                     continue
 
@@ -83,11 +83,12 @@ def data_mapping(value, data_type, max_length):
             raise ValueError(f"Nieznany format daty: {value_str}")
 
         if data_type == 'date':
-            date_obj =  datetime.strptime(value, '%Y-%m-%d')
-            return datetime.combine(date_obj, datetime.min.time())
+            # date_obj =  datetime.strptime(value, '%Y-%m-%d')
+            # return datetime.combine(date_obj, datetime.min.time())
+            return str(value)
 
         if data_type == 'time':
-            return value #jak str bo to nizej daje przykladowa date
+            return str(value) #jak str bo to nizej daje przykladowa date
 
         if data_type == 'year':
              return int(value)
@@ -159,4 +160,4 @@ def convert_tables():
         # collection = table
     print("Koniec Konwertowania")
 
-convert_tables()
+# convert_tables()

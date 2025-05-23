@@ -6,6 +6,7 @@ def get_foreign_keys(table):
     for i in data['foreign_keys']:
         if i['TABLE_NAME'] == table:
             foreign_keys.append(i)
+    return foreign_keys
 
 
 def adding_foreign_key():
@@ -29,5 +30,5 @@ def adding_foreign_key():
     print("Zakończono dodawanie fk")
 
 
-convert_tables()
-adding_foreign_key()
+# convert_tables()
+# adding_foreign_key()
