@@ -2,6 +2,17 @@
 .env
 .venv
 venv
-# IDE
-.idea/
+
 converter/key.json
+
+# Pliki i foldery Pythona
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# Pliki konfiguracyjne IDE
+.idea/
+.vscode/
+*.swp
