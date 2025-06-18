@@ -1,0 +1,779 @@
+{
+  "export_date": "2025-04-23T10:28:26.475310",
+  "tables": [
+    "album",
+    "artist",
+    "customer",
+    "employee",
+    "genre",
+    "invoice",
+    "invoiceline",
+    "mediatype",
+    "playlist",
+    "playlisttrack",
+    "track",
+    "proba"
+  ],
+  "foreign_keys": [
+    {
+      "TABLE_NAME": "album",
+      "COLUMN_NAME": "ArtistId",
+      "REFERENCED_TABLE_NAME": "artist",
+      "REFERENCED_COLUMN_NAME": "ArtistId"
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "SupportRepId",
+      "REFERENCED_TABLE_NAME": "employee",
+      "REFERENCED_COLUMN_NAME": "EmployeeId"
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "ReportsTo",
+      "REFERENCED_TABLE_NAME": "employee",
+      "REFERENCED_COLUMN_NAME": "EmployeeId"
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "CustomerId",
+      "REFERENCED_TABLE_NAME": "customer",
+      "REFERENCED_COLUMN_NAME": "CustomerId"
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "COLUMN_NAME": "InvoiceId",
+      "REFERENCED_TABLE_NAME": "invoice",
+      "REFERENCED_COLUMN_NAME": "InvoiceId"
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "COLUMN_NAME": "TrackId",
+      "REFERENCED_TABLE_NAME": "track",
+      "REFERENCED_COLUMN_NAME": "TrackId"
+    },
+    {
+      "TABLE_NAME": "playlisttrack",
+      "COLUMN_NAME": "PlaylistId",
+      "REFERENCED_TABLE_NAME": "playlist",
+      "REFERENCED_COLUMN_NAME": "PlaylistId"
+    },
+    {
+      "TABLE_NAME": "playlisttrack",
+      "COLUMN_NAME": "TrackId",
+      "REFERENCED_TABLE_NAME": "track",
+      "REFERENCED_COLUMN_NAME": "TrackId"
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "AlbumId",
+      "REFERENCED_TABLE_NAME": "album",
+      "REFERENCED_COLUMN_NAME": "AlbumId"
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "GenreId",
+      "REFERENCED_TABLE_NAME": "genre",
+      "REFERENCED_COLUMN_NAME": "GenreId"
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "MediaTypeId",
+      "REFERENCED_TABLE_NAME": "mediatype",
+      "REFERENCED_COLUMN_NAME": "MediaTypeId"
+    }
+  ],
+  "data_types": [
+    {
+      "TABLE_NAME": "album",
+      "COLUMN_NAME": "AlbumId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "album",
+      "COLUMN_NAME": "Title",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 160
+    },
+    {
+      "TABLE_NAME": "album",
+      "COLUMN_NAME": "ArtistId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "artist",
+      "COLUMN_NAME": "ArtistId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "artist",
+      "COLUMN_NAME": "Name",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 120
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "CustomerId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "FirstName",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "LastName",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 20
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "Company",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 80
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "Address",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 70
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "City",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "State",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "Country",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "PostalCode",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 10
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "Phone",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 24
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "Fax",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 24
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "Email",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 60
+    },
+    {
+      "TABLE_NAME": "customer",
+      "COLUMN_NAME": "SupportRepId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "EmployeeId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "LastName",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 20
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "FirstName",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 20
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "Title",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 30
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "ReportsTo",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "BirthDate",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "HireDate",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "Address",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 70
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "City",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "State",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "Country",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "PostalCode",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 10
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "Phone",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 24
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "Fax",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 24
+    },
+    {
+      "TABLE_NAME": "employee",
+      "COLUMN_NAME": "Email",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 60
+    },
+    {
+      "TABLE_NAME": "genre",
+      "COLUMN_NAME": "GenreId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "genre",
+      "COLUMN_NAME": "Name",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 120
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "InvoiceId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "CustomerId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "InvoiceDate",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "BillingAddress",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 70
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "BillingCity",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "BillingState",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "BillingCountry",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 40
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "BillingPostalCode",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 10
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "COLUMN_NAME": "Total",
+      "DATA_TYPE": "decimal",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "COLUMN_NAME": "InvoiceLineId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "COLUMN_NAME": "InvoiceId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "COLUMN_NAME": "TrackId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "COLUMN_NAME": "UnitPrice",
+      "DATA_TYPE": "decimal",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "COLUMN_NAME": "Quantity",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "mediatype",
+      "COLUMN_NAME": "MediaTypeId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "mediatype",
+      "COLUMN_NAME": "Name",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 120
+    },
+    {
+      "TABLE_NAME": "playlist",
+      "COLUMN_NAME": "PlaylistId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "playlist",
+      "COLUMN_NAME": "Name",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 120
+    },
+    {
+      "TABLE_NAME": "playlisttrack",
+      "COLUMN_NAME": "PlaylistId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "playlisttrack",
+      "COLUMN_NAME": "TrackId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "TrackId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "Name",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 200
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "AlbumId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "MediaTypeId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "GenreId",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "Composer",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 220
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "Milliseconds",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "Bytes",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "track",
+      "COLUMN_NAME": "UnitPrice",
+      "DATA_TYPE": "decimal",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+        {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "IntColumn",
+      "DATA_TYPE": "int",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "TinyIntColumn",
+      "DATA_TYPE": "tinyint",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "SmallIntColumn",
+      "DATA_TYPE": "smallint",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "MediumIntColumn",
+      "DATA_TYPE": "mediumint",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BigIntColumn",
+      "DATA_TYPE": "bigint",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "FloatColumn",
+      "DATA_TYPE": "float",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DoubleColumn",
+      "DATA_TYPE": "double",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DecimalColumn",
+      "DATA_TYPE": "decimal",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DecimalColumn2",
+      "DATA_TYPE": "decimal",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "CharColumn",
+      "DATA_TYPE": "char",
+      "CHARACTER_MAXIMUM_LENGTH": 1
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "VarCharColumn",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 255
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "VarCharColumnLong",
+      "DATA_TYPE": "varchar",
+      "CHARACTER_MAXIMUM_LENGTH": 255
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "TextColumn",
+      "DATA_TYPE": "text",
+      "CHARACTER_MAXIMUM_LENGTH": 65535
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "TextColumnLong",
+      "DATA_TYPE": "text",
+      "CHARACTER_MAXIMUM_LENGTH": 65535
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateTimeColumn",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateTimeColumn2",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateTimeColumn3",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateTimeColumn4",
+      "DATA_TYPE": "datetime",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "DateColumn",
+      "DATA_TYPE": "date",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "TimeColumn",
+      "DATA_TYPE": "time",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BooleanColumnTrue",
+      "DATA_TYPE": "boolean",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BooleanColumnFalse",
+      "DATA_TYPE": "boolean",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BooleanColumnInt",
+      "DATA_TYPE": "boolean",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BooleanColumnStr",
+      "DATA_TYPE": "boolean",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "BlobColumn",
+      "DATA_TYPE": "blob",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "JsonColumn",
+      "DATA_TYPE": "json",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "EnumColumn",
+      "DATA_TYPE": "enum",
+      "CHARACTER_MAXIMUM_LENGTH": null
+    }
+  ],
+  "indexes": [
+    {
+      "TABLE_NAME": "artist",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "ArtistId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "genre",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "GenreId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "mediatype",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "MediaTypeId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "playlist",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "PlaylistId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "album",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "AlbumId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "album",
+      "INDEX_NAME": "IFK_AlbumArtistId",
+      "COLUMN_NAME": "ArtistId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "customer",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "CustomerId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "customer",
+      "INDEX_NAME": "IFK_CustomerSupportRepId",
+      "COLUMN_NAME": "SupportRepId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "employee",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "EmployeeId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "employee",
+      "INDEX_NAME": "IFK_EmployeeReportsTo",
+      "COLUMN_NAME": "ReportsTo",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "InvoiceId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "invoice",
+      "INDEX_NAME": "IFK_InvoiceCustomerId",
+      "COLUMN_NAME": "CustomerId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "InvoiceLineId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "INDEX_NAME": "IFK_InvoiceLineInvoiceId",
+      "COLUMN_NAME": "InvoiceId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "invoiceline",
+      "INDEX_NAME": "IFK_InvoiceLineTrackId",
+      "COLUMN_NAME": "TrackId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "playlisttrack",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "PlaylistId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "playlisttrack",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "TrackId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "playlisttrack",
+      "INDEX_NAME": "IFK_PlaylistTrackPlaylistId",
+      "COLUMN_NAME": "PlaylistId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "playlisttrack",
+      "INDEX_NAME": "IFK_PlaylistTrackTrackId",
+      "COLUMN_NAME": "TrackId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "track",
+      "INDEX_NAME": "PRIMARY",
+      "COLUMN_NAME": "TrackId",
+      "NON_UNIQUE": 0
+    },
+    {
+      "TABLE_NAME": "track",
+      "INDEX_NAME": "IFK_TrackAlbumId",
+      "COLUMN_NAME": "AlbumId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "track",
+      "INDEX_NAME": "IFK_TrackGenreId",
+      "COLUMN_NAME": "GenreId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "track",
+      "INDEX_NAME": "IFK_TrackMediaTypeId",
+      "COLUMN_NAME": "MediaTypeId",
+      "NON_UNIQUE": 1
+    },
+    {
+      "TABLE_NAME": "proba",
+      "COLUMN_NAME": "IntColumn",
+      "INDEX_TYPE": "PRIMARY",
+      "NON_UNIQUE": 0
+    }
+  ]
+}

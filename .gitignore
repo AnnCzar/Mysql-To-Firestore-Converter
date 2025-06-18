@@ -1,0 +1,7 @@
+# Env file z danymi logowania
+.env
+.venv
+venv
+# IDE
+.idea/
+converter/key.json

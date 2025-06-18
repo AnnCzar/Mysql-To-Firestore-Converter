@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Database Converter</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet"/>
+</head>
+<body>
+<h1>Database converter</h1>
+
+<form id="converterForm" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Firestore Credentials</legend>
+        <label for="firestore_key">Upload Firestore Key (JSON):</label>
+        <input type="file" id="firestore_key" name="firestore_key" accept=".json" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>MySQL Database Info</legend>
+        <label for="mysql_host">Host:</label>
+        <input type="text" id="mysql_host" name="mysql_host" required><br>
+
+        <label for="mysql_db">Database Name:</label>
+        <input type="text" id="mysql_db" name="mysql_db" required><br>
+
+        <label for="mysql_user">Username:</label>
+        <input type="text" id="mysql_user" name="mysql_user" required><br>
+
+        <label for="mysql_password">Password:</label>
+        <input type="password" id="mysql_password" name="mysql_password" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Conversion Level</legend>
+        <label for="conversion_level">Select conversion level:</label>
+        <select id="conversion_level" name="conversion_level" required>
+            <option value="1">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+            <option value="4">Level 4</option>
+        </select>
+        <p id="conversion_description" style="margin-top: 10px; font-style: italic;">
+            Each table as a separate collection without relationships.
+        </p>
+    </fieldset>
+
+    <br>
+    <button type="submit" id="submitBtn">Convert</button>
+</form>
+<div id="statusContainer" class="status-container" style="display: none;">
+    <div id="statusMessage"></div>
+    <div id="progressLog" class="progress-log" style="display: none;"></div>
+</div>
+
+<script>
+    const description = document.getElementById('conversion_description');
+    const select = document.getElementById('conversion_level');
+    const form = document.getElementById('converterForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusContainer = document.getElementById('statusContainer');
+    const statusMessage = document.getElementById('statusMessage');
+    const progressLog = document.getElementById('progressLog');
+
+    const descriptions = {
+        "1": "Each table as a separate collection without relationships.",
+        "2": "Preserving relationships using references",
+        "3": "Creating subcollections for 1:N relationships",
+        "4": "Data denormalization into a single document"
+    };
+
+    select.addEventListener('change', function () {
+        description.textContent = descriptions[this.value];
+    });
+
+    function showStatus(message, type, showProgress = false) {
+        statusContainer.className = `status-container status-${type}`;
+        statusContainer.style.display = 'block';
+
+        if (type === 'loading') {
+            statusMessage.innerHTML = `<span class="spinner"></span>${message}`;
+        } else {
+            statusMessage.innerHTML = message;
+        }
+
+        if (showProgress) {
+            progressLog.style.display = 'block';
+        } else {
+            progressLog.style.display = 'none';
+        }
+
+        // Scroll to status message
+        statusContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function hideStatus() {
+        statusContainer.style.display = 'none';
+    }
+
+    function addProgressLog(message) {
+        const timestamp = new Date().toLocaleTimeString();
+        progressLog.innerHTML += `[${timestamp}] ${message}\n`;
+        progressLog.scrollTop = progressLog.scrollHeight;
+    }
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        hideStatus();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Converting...';
+
+        showStatus('Starting conversion process...', 'loading', true);
+        addProgressLog('Initializing conversion...');
+
+        try {
+            const formData = new FormData(form);
+
+            addProgressLog('Sending data to server...');
+
+            const response = await fetch('/convert', {
+                method: 'POST',
+                body: formData
+            });
+
+            addProgressLog('Processing conversion...');
+
+            const result = await response.text();
+
+            if (response.ok) {
+                addProgressLog('Conversion completed successfully!');
+                showStatus('Conversion completed successfully!', 'success', true);
+            } else {
+                addProgressLog(`Error: ${result}`);
+                showStatus(`Error: ${result}`, 'error', true);
+            }
+
+        } catch (error) {
+            addProgressLog(`Network error: ${error.message}`);
+            showStatus(`Network error: ${error.message}`, 'error', true);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Convert';
+            form.reset();
+        }
+    });
+</script>
+
+</body>
+</html>

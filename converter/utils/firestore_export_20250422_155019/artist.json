@@ -1,0 +1,85 @@
+{
+  "collection_name": "artist",
+  "documents": [
+    {
+      "ArtistId": 1,
+      "Name": "Artist 1"
+    },
+    {
+      "ArtistId": 2,
+      "Name": "Artist 2"
+    },
+    {
+      "ArtistId": 3,
+      "Name": "Artist 3"
+    },
+    {
+      "ArtistId": 4,
+      "Name": "Artist 4"
+    },
+    {
+      "ArtistId": 5,
+      "Name": "Artist 5"
+    },
+    {
+      "ArtistId": 6,
+      "Name": "Artist 6"
+    },
+    {
+      "ArtistId": 7,
+      "Name": "Artist 7"
+    },
+    {
+      "ArtistId": 8,
+      "Name": "Artist 8"
+    },
+    {
+      "ArtistId": 9,
+      "Name": "Artist 9"
+    },
+    {
+      "ArtistId": 10,
+      "Name": "Artist 10"
+    },
+    {
+      "ArtistId": 11,
+      "Name": "Artist 11"
+    },
+    {
+      "ArtistId": 12,
+      "Name": "Artist 12"
+    },
+    {
+      "ArtistId": 13,
+      "Name": "Artist 13"
+    },
+    {
+      "ArtistId": 14,
+      "Name": "Artist 14"
+    },
+    {
+      "ArtistId": 15,
+      "Name": "Artist 15"
+    },
+    {
+      "ArtistId": 16,
+      "Name": "Artist 16"
+    },
+    {
+      "ArtistId": 17,
+      "Name": "Artist 17"
+    },
+    {
+      "ArtistId": 18,
+      "Name": "Artist 18"
+    },
+    {
+      "ArtistId": 19,
+      "Name": "Artist 19"
+    },
+    {
+      "ArtistId": 20,
+      "Name": "Artist 20"
+    }
+  ]
+}
